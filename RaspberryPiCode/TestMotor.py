@@ -37,6 +37,7 @@ def tick():
     led4.on()
     delay()
 
+
 while True:
 
     rotationAmount = (float) (input("Enter a number of degrees to turn: "))
