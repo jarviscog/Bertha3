@@ -1,16 +1,12 @@
 from gpiozero import LED
 from time import sleep
 
-led1 = LED(17)
-led2 = LED(19)
-led3 = LED(26)
-led4 = LED(21)
 
 def delay():
 
     sleep(0.002)
 
-def tick():
+def tick(led1,led2,led3,led4):
 
     print("1",end=" ")
     led1.on()
@@ -36,17 +32,3 @@ def tick():
     led3.off()
     led4.on()
     delay()
-
-
-while True:
-
-    rotationAmount = (float) (input("Enter a number of degrees to turn: "))
-
-    for  i in range(0,(int)((rotationAmount*1.425))):
-
-        tick()
-    # for i in range(0,512):
-    #
-    #     tick()
-    #
-    # sleep(10)
