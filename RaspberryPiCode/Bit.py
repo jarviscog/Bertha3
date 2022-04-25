@@ -15,10 +15,11 @@ class Bit:
         for i in range(ord('A'), ord('Z') + 1):
             self.flap_symbols.append(chr(i))
         for i in range(0,10):
-            self.flap_symbols.append(i)
+            self.flap_symbols.append(str(i))
         self.flap_symbols.append('#')
         self.flap_symbols.append('*')
         self.flap_symbols.append('-')
+        self.flap_symbols.append('.')
 
         self.number_of_positions = len(self.flap_symbols)
 
