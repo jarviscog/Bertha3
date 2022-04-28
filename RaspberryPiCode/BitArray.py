@@ -127,6 +127,21 @@ class BitArray:
 
         return
 
+    def display_layered_strings(self):
+        # TODO I think this will be the final solution to my UI/Layout problem
+        # Take an array of strings, and a range of rows. Print overflow on new lines, but make sure different strings
+        # in the arr do not get put on the same line
+        # UI Is hard!
+        print("TODO")
+
+
+    def border(self):
+        # TODO Make a border on the outside of the display, and return the inside of the border as a new
+        #  splitflap object. This can be used outside of the function, but also inside the function for animations,
+        #  calling self.recursive_border();
+        #  which does self.border().border()...
+        print("TODO")
+
     def clear_screen(self, whitespace_char = ' '):
         """
         Sets the entire screen to the whitespace_char

@@ -20,6 +20,7 @@ class Bit:
         self.flap_symbols.append('*')
         self.flap_symbols.append('-')
         self.flap_symbols.append('.')
+        self.flap_symbols.append(':')
 
         self.number_of_positions = len(self.flap_symbols)
 
@@ -51,6 +52,7 @@ class Bit:
             # I don't know why, but making this recursive makes me nervous. The only way this can get out of control
             # is if self.flap_symbols is changing, which it shouldn't unless something has gone terribly wrong anyways.
             self.flip_to(self.flap_symbols[0])
+
 
 
     def __str__(self):

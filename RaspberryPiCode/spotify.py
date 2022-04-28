@@ -30,7 +30,7 @@ def get_current_session():
 def get_cleaned_song_info():
     """
 
-    :return: array of: [song, artist, album]
+    :return: array of strings: [song, artist, album].
     """
     current_playback_dict = get_current_session()
     # pprint(current_playback_dict)
