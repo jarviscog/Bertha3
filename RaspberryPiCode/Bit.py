@@ -47,7 +47,11 @@ class Bit:
                 if self.symbol == desired_symbol:
                     flipping = False
         else:
-            print("Symbol " + desired_symbol + " is not in the split flap.")
+            print("Symbol [" + desired_symbol + "] is not in the split flap. Flipping to first symbol")
+            # I don't know why, but making this recursive makes me nervous. The only way this can get out of control
+            # is if self.flap_symbols is changing, which it shouldn't unless something has gone terribly wrong anyways.
+            self.flip_to(self.flap_symbols[0])
+
 
     def __str__(self):
         return self.symbol

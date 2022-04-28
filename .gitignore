@@ -15,3 +15,6 @@ Parts/~$Box.SLDPRT
 Demo/~$Screen.SLDPRT
 venv
 .idea
+RaspberryPiCode/constants.py
+RaspberryPiCode/.cache
+*.pyc

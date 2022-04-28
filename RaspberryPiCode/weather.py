@@ -1,8 +1,7 @@
 import requests, json
 import math
-CITY = "London"
 API_KEY = "b190a0605344cc4f3af08d0dd473dd25"
-def get_weather():
+def get_weather(CITY="Ilderton"):
     # importing requests and json
     # base URL
     BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
@@ -32,7 +31,7 @@ def get_weather():
         # print(f"Humidity: {humidity}")
         # print(f"Pressure: {pressure}")
         # print(f"Weather Report: {report[0]['description']}")
-        return_string = "In " + CITY + " it is currently" + str(round(temperature-273.15,2)) + "C"
+        return_string = "In " + CITY + " it is currently " + str(round(temperature-273.15,2)) + "C"
         return return_string
     else:
         # showing the error message

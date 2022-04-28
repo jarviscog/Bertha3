@@ -27,9 +27,12 @@ class BitArray:
             self.array.append(row)
 
     def set_bit(self, x,y, symbol):
-        symbol = symbol.upper()
-        if (type(self.array[y][x]) == type(Bit())):
-            self.array[y][x].flip_to(symbol)
+        try:
+            symbol = symbol.upper()
+            if (type(self.array[y][x]) == type(Bit())):
+                self.array[y][x].flip_to(symbol)
+        except:
+            print(f"ERROR: {symbol} CANNOT BE PUT INTO LOCATION {x}, {y}.")
 
     def display_line(self, input_string, row = 0, align:chr = "L", whitespace_character = ' '):
         # TODO If the text would not fit on the display, this will crash
@@ -87,6 +90,8 @@ class BitArray:
         :param overflow: What to do with overflow if the string is too long. This is currently unused
         :param whitespace_char: What to fill the empty space with
         :param align: To align on the left 'L', right 'R', or center 'C'
+        TODO I think it would be helpful if this returned the last row that was printed on. This would let other parts
+        # of the code print based on the last location
         :return:
         """
         # Clean some of the input
