@@ -7,10 +7,11 @@ class BitArray:
     This is the object used to represent the display.
     """
 
+    # Some invalid chars should be crushed down, and some should be converted. These constants show which does which
+    CRUSHED_CHARS = {'\''}
 
-    number_of_bits = 0
-    width = 0
-    height = 0
+    CONVERTED_CHARS = {'$':'S', '。':'.'}
+
 
     def __init__(self, width:int, height:int):
 
@@ -26,7 +27,7 @@ class BitArray:
                 row.append(new_bit)
             self.array.append(row)
 
-    def set_bit(self, x,y, symbol):
+    def set_bit(self, x:int,y:int, symbol):
         try:
             symbol = symbol.upper()
             if (type(self.array[y][x]) == type(Bit())):
@@ -37,6 +38,11 @@ class BitArray:
     def display_line(self, input_string, row = 0, align:chr = "L", whitespace_character = ' '):
         # TODO If the text would not fit on the display, this will crash
         # It is assumed that the sting will be on one line
+
+        if(len(input_string) > len(self.array[0])):
+            align = 'L'
+
+
         if align == 'L':
             for i in range(0, len(self.array[0])):
                 # print("Working on line")
@@ -60,7 +66,10 @@ class BitArray:
                 if i >= start_bit and i <= end_bit:
                     # print(i-start_bit)
                     character = input_string.upper()[i-start_bit]
-                    self.set_bit(i, row, character)
+                    if character == ' ':
+                        self.set_bit(i, row, whitespace_character)
+                    else:
+                        self.set_bit(i, row, character)
                 else:
                     self.set_bit(i,row, whitespace_character)
         if align == 'R':
@@ -100,6 +109,7 @@ class BitArray:
             print("Align value is not valid")
             return
 
+
         # print("Setting String: " + input_string)
         # This will take some word wrapping logic to work. Count the number of characters, divide by the number of
         # lines, then split the line based on where the spaces are
@@ -120,19 +130,43 @@ class BitArray:
         # print(difference_values)
         # Whoever made this package 🙏
         lines = textwrap.wrap(input_string, width=self.width)
-        i = starting_row
+        number_of_rows_used = starting_row
         for line in lines:
-            self.display_line(line,row=i, whitespace_character=whitespace_char,align=align)
-            i+=1
+            self.display_line(line,row=number_of_rows_used, whitespace_character=whitespace_char,align=align)
+            number_of_rows_used+=1
 
-        return
+        return number_of_rows_used - 1
 
-    def display_layered_strings(self):
+    def display_layered_strings(self, strings, starting_row:int = 0,ending_row:int = 0, whitespace_char=' ', align='L'):
         # TODO I think this will be the final solution to my UI/Layout problem
         # Take an array of strings, and a range of rows. Print overflow on new lines, but make sure different strings
         # in the arr do not get put on the same line
         # UI Is hard!
-        print("TODO")
+        number_of_rows = ending_row - starting_row
+        if(len(strings) > number_of_rows):
+            print("Not possible to display")
+            return
+        else:
+            print("WILL fit optimally")
+            start_of_next_row = starting_row
+            for string in strings:
+
+                start_of_next_row = 1 + self.display_string(string, starting_row=start_of_next_row, ending_row=ending_row, align=align, whitespace_char=whitespace_char)
+
+
+
+
+        # Check what would happen if the text had all of the space it wanted
+        return_row = 0
+        total_num_of_lines = 0
+        for string in strings:
+            lines = textwrap.wrap(string, width=self.width)
+            total_num_of_lines += len(lines)
+
+        print(total_num_of_lines)
+
+
+
 
 
     def border(self):

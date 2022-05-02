@@ -7,10 +7,12 @@ class Bit:
     location = 0
     symbol = " "
 
+    bit_location_in_serial_connection = 0
+
     def __init__(self):
 
+        # Add all of the valid symbols to the internal representation
         self.flap_symbols = []
-
         self.flap_symbols.append(' ')
         for i in range(ord('A'), ord('Z') + 1):
             self.flap_symbols.append(chr(i))
@@ -52,7 +54,6 @@ class Bit:
             # I don't know why, but making this recursive makes me nervous. The only way this can get out of control
             # is if self.flap_symbols is changing, which it shouldn't unless something has gone terribly wrong anyways.
             self.flip_to(self.flap_symbols[0])
-
 
 
     def __str__(self):

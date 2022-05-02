@@ -1,18 +1,15 @@
 import requests, json
 import math
-API_KEY = "b190a0605344cc4f3af08d0dd473dd25"
+from RaspberryPiCode.constants import API_KEY
 def get_weather(CITY="Ilderton"):
-    # importing requests and json
-    # base URL
     BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
-    # City Name CITY = "Hyderabad"
-    # API key API_KEY = "Your API Key"
     # upadting the URL
     URL = BASE_URL + "q=" + CITY + "&appid=" + API_KEY
     # print(URL)
     # HTTP request
     response = requests.get(URL)
     # checking the status code of the request
+
     if response.status_code == 200:
         # getting data in the json format
         data = response.json()
