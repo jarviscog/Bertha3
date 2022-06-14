@@ -10,8 +10,8 @@ def main():
     print("Bertha3 Terminal Interface:")
     # num_of_rows = input("Enter the number of rows")
     # num_of_cols = input("Enter the number of columns")
-    num_of_rows = 5
-    num_of_cols = 13
+    num_of_rows = 4
+    num_of_cols = 14
     location = "Ilderton"
     whitespace_char = ' '
 
