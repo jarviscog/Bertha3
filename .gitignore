@@ -13,6 +13,7 @@ Demo/~$Bit.SLDPRT
 Parts/~$Bit.SLDASM
 Parts/~$Box.SLDPRT
 Demo/~$Screen.SLDPRT
+~$*
 venv
 .idea
 RaspberryPiCode/constants.py
