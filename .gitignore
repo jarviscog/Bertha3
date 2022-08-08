@@ -1,18 +1,3 @@
-Parts/~$BitAssembly.SLDASM
-Parts/~$BottomBox.SLDPRT
-Parts/~$EndCap.SLDPRT
-Parts/~$Flap.SLDPRT
-Parts/~$FrontBox.SLDPRT
-Parts/~$LeftSideBox.SLDPRT
-Parts/~$Metal Rod.SLDPRT
-Parts/~$Motor.SLDPRT
-Parts/~$RearBox.SLDPRT
-Parts/~$rightSideBox.SLDPRT
-Parts/~$SinisterGear.SLDPRT
-Demo/~$Bit.SLDPRT
-Parts/~$Bit.SLDASM
-Parts/~$Box.SLDPRT
-Demo/~$Screen.SLDPRT
 ~$*
 venv
 .idea
