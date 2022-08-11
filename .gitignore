@@ -4,3 +4,4 @@ venv
 RaspberryPiCode/constants.py
 RaspberryPiCode/.cache
 *.pyc
+*.gcode
