@@ -1,0 +1,4 @@
+{
+    "sketch": "ESPCode/src/flowing_light/flowing_light.cpp",
+    "port": "/dev/tty.SLAB_USBtoUART"
+}

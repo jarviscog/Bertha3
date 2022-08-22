@@ -5,3 +5,4 @@ RaspberryPiCode/constants.py
 RaspberryPiCode/.cache
 *.pyc
 *.gcode
+.DS_Store
